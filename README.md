@@ -10,6 +10,9 @@ The haven exists on two layers: the **Day shift** and the **Night shift**. Press
 - Some friends only show up by day, others only by night.
 - Friends who are following you shift layers with you.
 
+## Kind words
+Finding and bringing friends home shows a gentle affirmation (a Day set and a Night set). When everyone is home, the Tree of Life shares a classic quote (Lao Tzu, Marcus Aurelius, Seneca, Epictetus, Heraclitus) with its source.
+
 ## Controls
 - Arrow keys / WASD: move
 - **Shift**: flip Day ⇄ Night
