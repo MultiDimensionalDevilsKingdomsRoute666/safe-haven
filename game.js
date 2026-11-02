@@ -150,3 +150,21 @@ function draw(){S.t++;mixMusic();const day=S.layer=='day';x.imageSmoothingEnable
  requestAnimationFrame(draw)}
 c.width=16*T;c.height=13*T+HUD;load(0);draw();
 window.__sh={get S(){return S}};
+// 589/kin: phones. Start sound on first tap, speaker button, touch controls.
+let audioCtx=null;
+function unlockAudio(){try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state!='running')audioCtx.resume()}catch(e){}
+ for(const k in MUS)if(MUS[k].paused)MUS[k].play().catch(()=>{});startMusic()}
+['pointerdown','touchstart','click'].forEach(ev=>addEventListener(ev,unlockAudio,{passive:true}));
+(function(){const css=document.createElement('style');css.textContent=`#spk{position:fixed;top:10px;right:10px;font-size:28px;width:56px;height:56px;border-radius:50%;border:0;background:#2b2140cc;color:#fff;z-index:9}
+#pad{display:none;position:fixed;bottom:12px;left:0;right:0;justify-content:space-between;padding:0 14px;pointer-events:none;z-index:9}
+#pad button{pointer-events:auto;width:64px;height:64px;font-size:26px;border-radius:14px;border:0;background:#2b2140cc;color:#f4ecd8;touch-action:manipulation;user-select:none}
+#pad .d{display:grid;grid-template-columns:repeat(3,64px);gap:6px}
+@media (pointer:coarse){#pad{display:flex}body{padding-bottom:160px}}`;document.head.appendChild(css);
+const key=k=>dispatchEvent(new KeyboardEvent('keydown',{key:k}));
+const spk=document.createElement('button');spk.id='spk';spk.setAttribute('aria-label','Sound on/off');
+const lbl=()=>spk.textContent=muted?'🔇':'🔊';lbl();
+spk.addEventListener('click',e=>{e.stopPropagation();unlockAudio();key('m');lbl()});document.body.appendChild(spk);
+const pad=document.createElement('div');pad.id='pad';
+pad.innerHTML='<div class="d"><span></span><button data-k="ArrowUp">▲</button><span></span><button data-k="ArrowLeft">◀</button><button data-k="ArrowDown">▼</button><button data-k="ArrowRight">▶</button></div><button data-k="Shift" style="width:96px;font-size:18px">Shift ☀︎/☾</button>';
+pad.querySelectorAll('button').forEach(b=>b.addEventListener('pointerdown',e=>{e.preventDefault();unlockAudio();key(b.dataset.k)}));
+document.body.appendChild(pad);addEventListener('keyup',lbl);addEventListener('keydown',()=>setTimeout(lbl))})();
