@@ -86,6 +86,7 @@ addEventListener('keydown',e=>{const k=e.key;startMusic();
  if(m){move(...m);e.preventDefault()} if(k=='r'||k=='R')load(0)});
 function img(n,tx,ty,a=1){if(IMG[n].complete&&IMG[n].naturalWidth){x.globalAlpha=a;x.drawImage(IMG[n],tx*T,ty*T,T,T);x.globalAlpha=1}}
 function glow(px,py,r,col){const g=x.createRadialGradient(px,py,2,px,py,r);g.addColorStop(0,col);g.addColorStop(1,'rgba(255,200,110,0)');x.fillStyle=g;x.beginPath();x.arc(px,py,r,0,7);x.fill()}
+function tag(t,cx,by){x.save();x.font='bold 22px sans-serif';x.textAlign='center';const w=x.measureText(t).width+16;x.globalAlpha=1;x.fillStyle='#120e1ee6';x.strokeStyle='#d4af37';x.lineWidth=2;x.beginPath();x.roundRect(cx-w/2,by-26,w,28,10);x.fill();x.stroke();x.fillStyle='#fff6d8';x.fillText(t,cx,by-5);x.restore()}
 function wrap(t,cx,y,mw,lh){x.textAlign='center';let line='';for(const w of t.split(' ')){if(x.measureText(line+w).width>mw){x.fillText(line,cx,y);line='';y+=lh}line+=w+' '}x.fillText(line,cx,y);x.textAlign='left'}
 const STARS=Array.from({length:140},(_,i)=>({x:Math.random()*1024,y:Math.random()*832,r:Math.random()*1.8+.4,p:Math.random()*6}));
 const PLANETS=[[180,150,34,'#8a5cd8',1],[860,640,22,'#ffb347',0],[760,170,14,'#5fb3c8',0]];
@@ -101,7 +102,7 @@ function sky(day){const H=c.height-HUD;if(day){const g=x.createLinearGradient(0,
 function drawKin(k){const px=k[3]*T,py=k[4]*T;x.fillStyle=k[5];x.beginPath();x.ellipse(px+32,py+42,15,16,0,0,7);x.fill();x.beginPath();x.arc(px+32,py+22,11,0,7);x.fill();
  x.fillStyle='#1b1430';x.fillRect(px+27,py+20,3,3);x.fillRect(px+35,py+20,3,3);x.strokeStyle='#1b1430';x.lineWidth=1.5;x.beginPath();x.arc(px+32,py+25,4,.2,2.9);x.stroke();
  if(k[0].includes('Guard')){x.fillStyle='#ffd27a';x.fillRect(px+46,py+30,6,10)}if(k[0].includes('Angel')){x.strokeStyle='#ffd700';x.lineWidth=2;x.beginPath();x.ellipse(px+32,py+8,10,3,0,0,7);x.stroke()}
- x.font='10px sans-serif';x.textAlign='center';x.fillStyle='#fff';x.strokeStyle='#000a';x.lineWidth=3;const nm=k[0].split(' ')[0]=='DEVINE'?'DEVINE':k[0];x.strokeText(nm,px+32,py+63);x.fillText(nm,px+32,py+63);x.textAlign='left'}
+ const nm=k[0].split(' ')[0]=='DEVINE'?'DEVINE':k[0];tag(nm,px+32,py-4)}
 function draw(){S.t++;mixMusic();const day=S.layer=='day';x.imageSmoothingEnabled=false;
  sky(day);
  S.map.forEach((r,y)=>r.forEach((ch,X)=>{
@@ -140,9 +141,9 @@ function draw(){S.t++;mixMusic();const day=S.layer=='day';x.imageSmoothingEnable
  // HUD
  x.fillStyle=day?'#f3e9d2':'#1b1840';x.fillRect(0,c.height-HUD,c.width,HUD);x.fillStyle=day?'#3b2f1e':'#f4ecd8';x.font='18px sans-serif';
  x.fillText((day?'\u2600 Day shift':'\u263E Night shift')+(S.room?'   Star room   ':'   Home: '+S.home+'/'+S.total+'   ')+S.msg+(muted?'   \u{1F507}':''),12,c.height-13);
- if(S.bub&&S.t<S.bub.until){const a=Math.min(1,(S.bub.until-S.t)/40);x.globalAlpha=a;x.font='20px sans-serif';const w=x.measureText(S.bub.t).width+34;
+ if(S.bub&&S.t<S.bub.until){const a=Math.min(1,(S.bub.until-S.t)/40);x.globalAlpha=a;x.font='bold 26px sans-serif';const w=x.measureText(S.bub.t).width+34;
   const bx=Math.max(6,Math.min(c.width-w-6,px+32-w/2)),by=py>100?py-54:py+70;
-  x.fillStyle='#fffaf0';x.strokeStyle='#d4af37';x.lineWidth=3;x.beginPath();x.roundRect(bx,by,w,40,16);x.fill();x.stroke();x.fillStyle='#3b2f1e';x.fillText(S.bub.t,bx+17,by+27);x.globalAlpha=1}
+  x.fillStyle='#fffaf0';x.strokeStyle='#d4af37';x.lineWidth=3;x.beginPath();x.roundRect(bx,by,w,48,16);x.fill();x.stroke();x.fillStyle='#3b2f1e';x.fillText(S.bub.t,bx+17,by+33);x.globalAlpha=1}
  if(S.won){const W=c.width;x.fillStyle='#000b';x.fillRect(W/2-300,190,600,50);x.fillStyle='#9fe3ff';x.font='20px sans-serif';x.textAlign='center';x.fillText('Star room complete — room 2 of 2',W/2,222);x.textAlign='left';x.fillStyle='#000b';x.fillRect(W/2-300,250,600,110);x.fillStyle='#ffd700';x.font='bold 36px sans-serif';x.textAlign='center';x.fillText('Safe Haven \u2728',W/2,300);
   x.fillStyle='#f4ecd8';x.font='20px sans-serif';x.fillText('Everyone is home. Press R to play again.',W/2,338);
   x.fillStyle='#000c';x.fillRect(60,390,W-120,130);x.fillStyle='#fff6d8';x.font='italic 22px Georgia,serif';wrap('\u201c'+S.quote[0]+'\u201d',W/2,428,W-180,28);
@@ -168,3 +169,9 @@ const pad=document.createElement('div');pad.id='pad';
 pad.innerHTML='<div class="d"><span></span><button data-k="ArrowUp">▲</button><span></span><button data-k="ArrowLeft">◀</button><button data-k="ArrowDown">▼</button><button data-k="ArrowRight">▶</button></div><button data-k="Shift" style="width:96px;font-size:18px">Shift ☀︎/☾</button>';
 pad.querySelectorAll('button').forEach(b=>b.addEventListener('pointerdown',e=>{e.preventDefault();unlockAudio();key(b.dataset.k)}));
 document.body.appendChild(pad);addEventListener('keyup',lbl);addEventListener('keydown',()=>setTimeout(lbl))})();
+// 589/kin: fit the canvas to the screen, controls below it on phones.
+(function(){const coarse=matchMedia('(pointer:coarse)').matches,pad=document.getElementById('pad'),spk=document.getElementById('spk');
+if(coarse){document.body.classList.add('touch');pad.appendChild(spk)}
+function fit(){const padH=coarse?pad.offsetHeight+16:0,top=coarse?6:(document.querySelector('h2').offsetHeight+30),bot=coarse?0:(document.querySelector('body>p').offsetHeight+16);
+const aw=innerWidth-8,ah=innerHeight-padH-top-bot-12,sc=Math.max(.2,Math.min(aw/c.width,ah/c.height));c.style.width=Math.floor(c.width*sc)+'px';c.style.height=Math.floor(c.height*sc)+'px'}
+addEventListener('resize',fit);addEventListener('orientationchange',()=>setTimeout(fit,200));fit()})();
