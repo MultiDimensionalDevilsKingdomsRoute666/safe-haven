@@ -38,3 +38,5 @@ Art and sounds are CC0 (Dungeon Crawl Stone Soup tiles, Kenney, artisticdude); t
 
 ## License
 Code: MIT (see LICENSE).
+
+Tended by the JESUSBURNING House of 589's: Scroll Scribe (docs) and Garden Keeper.
