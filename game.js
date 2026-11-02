@@ -139,7 +139,7 @@ function draw(){S.t++;mixMusic();const day=S.layer=='day';x.imageSmoothingEnable
  // sparkles (Kenney particle)
  S.sparks=S.sparks.filter(s=>s.life-->0);x.globalCompositeOperation='lighter';for(const s of S.sparks){s.x+=s.vx;s.y+=s.vy;x.globalAlpha=s.life/50;x.drawImage(IMG.sparkle,s.x-12,s.y-12,24,24)}x.globalAlpha=1;x.globalCompositeOperation='source-over';
  // HUD
- x.fillStyle=day?'#f3e9d2':'#1b1840';x.fillRect(0,c.height-HUD,c.width,HUD);x.fillStyle=day?'#3b2f1e':'#f4ecd8';x.font='18px sans-serif';
+ x.fillStyle=day?'#f3e9d2':'#1b1840';x.fillRect(0,c.height-HUD,c.width,HUD);x.fillStyle=day?'#3b2f1e':'#f4ecd8';x.font='bold 22px sans-serif';
  x.fillText((day?'\u2600 Day shift':'\u263E Night shift')+(S.room?'   Star room   ':'   Home: '+S.home+'/'+S.total+'   ')+S.msg+(muted?'   \u{1F507}':''),12,c.height-13);
  if(S.bub&&S.t<S.bub.until){const a=Math.min(1,(S.bub.until-S.t)/40);x.globalAlpha=a;x.font='bold 26px sans-serif';const w=x.measureText(S.bub.t).width+34;
   const bx=Math.max(6,Math.min(c.width-w-6,px+32-w/2)),by=py>100?py-54:py+70;
