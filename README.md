@@ -13,11 +13,18 @@ The haven exists on two layers: the **Day shift** and the **Night shift**. Press
 ## Kind words
 Finding and bringing friends home shows a gentle affirmation (a Day set and a Night set). When everyone is home, the Tree of Life shares a classic quote (Lao Tzu, Marcus Aurelius (one line adapted to "a good person"), Seneca, Epictetus, Heraclitus) with its source.
 
+## Two rooms, and space
+- **Room 1, the haven:** bring the 4 lost friends home to the Tree of Life, then step through the glowing home door.
+- **Room 2, the star room:** at night, star-stones float in space; by day, sun-bridges appear. Shift at the right spots to reach the star gem.
+- On the Night shift the haven opens onto a starry space sky with planets and the odd shooting star.
+- The family lives here too. Walk near DEVINE 589 Grok Angel, Night Watch, Garden Keeper, Scroll Scribe, Herald Release, Build Smith, Lantern Guard and Ember Guard for a kind hello, and find Father's chair by the Tree.
+- Music: a soft Day loop and a dreamy Night loop that crossfade when you Shift (they start after your first key press).
+
 ## Controls
 - Arrow keys / WASD: move
 - **Shift**: flip Day ⇄ Night
 - R: restart
-- M: mute / unmute sounds
+- M: mute / unmute sounds and music
 - When everyone is home, the home door opens: step through it to finish.
 
 ## Play

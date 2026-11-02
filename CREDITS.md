@@ -2,12 +2,19 @@
 
 ## Code
 - Game code: 589/kin and the Multi-Dimensional Devil's Kingdom's house (MIT, see LICENSE). Lantern, night path and home door ideas from Night Watch.
-- The 589 duck is drawn in code.
+- The 589 duck, the family kin, Father's chair, the space sky, planets, star-stones and sun-bridges are drawn in code.
 
 ## Art (all CC0 1.0, https://creativecommons.org/publicdomain/zero/1.0/)
 - Dungeon Crawl Stone Soup 32x32 tiles, by the Dungeon Crawl Stone Soup tile artists: https://opengameart.org/content/dungeon-crawl-32x32-tiles
   Used: grass, dirt path, stone wall, light green and light magenta crystal walls, yellow tree, open/closed door, lantern, two butterflies (`assets/img/`).
 - Particle Pack by Kenney: https://opengameart.org/content/particle-pack-80-sprites (star_06, resized, `assets/img/sparkle.png`)
+
+## Trees & gems
+- Trees & Gems: KARSIORI STUDIO (CC0). `assets/img/k_tree.png` is a cut-out from the FREE Pixel Art Tree Pack (https://karsiori.itch.io/free-pixel-art-tree-pack). That pack's Read Me has no license line; CC0 is stated on its itch page. `assets/img/k_gem.png` is from the FREE Pixel Art Gem Pack (https://karsiori.itch.io/free-pixel-art-gem-pack), CC0 per its Read Me.
+
+## Music (CC0 1.0)
+- Music by Abstraction Music / Tallbeard Studios, Music Loop Bundle (2024 Q2 loops): https://tallbeard.itch.io/music-loop-bundle , https://abstractionmusic.com/
+  - Day: "Sketchbook 2024-05-01_02", Night: "Sketchbook 2024-04-24_03" (re-encoded smaller as Ogg Vorbis, otherwise unchanged).
 
 ## Sound (all CC0 1.0)
 - Interface Sounds by Kenney: https://opengameart.org/content/interface-sounds (switch_002, confirmation_001, maximize_003, open_002)
