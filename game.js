@@ -49,7 +49,7 @@ const QUOTES=[['A journey of a thousand miles begins with a single step.','Lao T
 const pick=a=>a[Math.floor(Math.random()*a.length)];
 const IMG={};['k_tree','k_gem','grass','path','wall','day_wall','night_wall','tree','door_closed','door_open','lantern','friend_day','friend_night','sparkle'].forEach(n=>{const i=new Image();i.src='assets/img/'+n+'.png';IMG[n]=i});
 const SFX={};let muted=false;[['shift','ogg'],['found','ogg'],['home','ogg'],['door','ogg'],['win','wav']].forEach(([n,e])=>{const a=new Audio('assets/sfx/'+n+'.'+e);a.volume=.35;SFX[n]=a});
-const MUS={day:new Audio('assets/music/day_sketchbook-2024-05-01_02.ogg'),night:new Audio('assets/music/night_sketchbook-2024-04-24_03.ogg')};let musicOn=false;
+const MUS={day:new Audio('assets/music/day_lantern_meadow.ogg'),night:new Audio('assets/music/night_starlit_drift.ogg')};let musicOn=false;
 for(const k in MUS){MUS[k].loop=true;MUS[k].volume=0}
 function startMusic(){if(musicOn)return;musicOn=true;for(const k in MUS)MUS[k].play().catch(()=>{})}
 function mixMusic(){if(!musicOn)return;for(const k in MUS){const tgt=muted?0:(S.layer==k?(k=='night'?.4:.3):0);const v=MUS[k].volume+(tgt-MUS[k].volume)*.03;MUS[k].volume=Math.max(0,Math.min(1,v))}}

@@ -13,8 +13,7 @@
 - Trees & Gems: KARSIORI STUDIO (CC0). `assets/img/k_tree.png` is a cut-out from the FREE Pixel Art Tree Pack (https://karsiori.itch.io/free-pixel-art-tree-pack). That pack's Read Me has no license line; CC0 is stated on its itch page. `assets/img/k_gem.png` is from the FREE Pixel Art Gem Pack (https://karsiori.itch.io/free-pixel-art-gem-pack), CC0 per its Read Me.
 
 ## Music (CC0 1.0)
-- Music by Abstraction Music / Tallbeard Studios, Music Loop Bundle (2024 Q2 loops): https://tallbeard.itch.io/music-loop-bundle , https://abstractionmusic.com/
-  - Day: "Sketchbook 2024-05-01_02", Night: "Sketchbook 2024-04-24_03" (re-encoded smaller as Ogg Vorbis, otherwise unchanged).
+- Original loops composed in code by 589/kin for Safe Haven (synthesized with Python/NumPy, no samples): Day "Lantern Meadow" and Night "Starlit Drift" (`assets/music/`). Released CC0 like the rest of our house-made assets; free to use anywhere, including AI-assisted projects.
 
 ## Sound (all CC0 1.0)
 - Interface Sounds by Kenney: https://opengameart.org/content/interface-sounds (switch_002, confirmation_001, maximize_003, open_002)

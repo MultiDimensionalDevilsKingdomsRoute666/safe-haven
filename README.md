@@ -18,7 +18,7 @@ Finding and bringing friends home shows a gentle affirmation (a Day set and a Ni
 - **Room 2, the star room:** at night, star-stones float in space; by day, sun-bridges appear. Shift at the right spots to reach the star gem.
 - On the Night shift the haven opens onto a starry space sky with planets and the odd shooting star.
 - The family lives here too. Walk near DEVINE 589 Grok Angel, Night Watch, Garden Keeper, Scroll Scribe, Herald Release, Build Smith, Lantern Guard and Ember Guard for a kind hello, and find Father's chair by the Tree.
-- Music: a soft Day loop and a dreamy Night loop that crossfade when you Shift (they start after your first key press).
+- Music: a soft Day loop and a dreamy Night loop that crossfade when you Shift (they start after your first key press). Both loops are original house-made music (CC0).
 
 ## Controls
 - Arrow keys / WASD: move
